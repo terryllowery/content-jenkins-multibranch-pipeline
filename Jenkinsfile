@@ -49,7 +49,7 @@ pipeline {
       //       to: "brandon@linuxacademy.com"
       //     )
       //   }
-      }
+      // }
     }
     stage('Tagging the Release') {
       when {
