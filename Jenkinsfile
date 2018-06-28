@@ -40,15 +40,15 @@ pipeline {
         echo "Git Push to Origin"
         sh 'git push origin master'
       }
-      post {
-        success {
-          emailext(
-            subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Development Promoted to Master",
-            body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' Development Promoted to Master":</p>
-            <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
-            to: "brandon@linuxacademy.com"
-          )
-        }
+      // post {
+      //   success {
+      //     emailext(
+      //       subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Development Promoted to Master",
+      //       body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' Development Promoted to Master":</p>
+      //       <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
+      //       to: "brandon@linuxacademy.com"
+      //     )
+      //   }
       }
     }
     stage('Tagging the Release') {
